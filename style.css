@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #a7c7e7 0%, #c8b6e2 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.vintage-player {
+  width: 800px;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 30px;
+}
+.vintage-player .brand-name {
+  color: #2b2b2b;
+  font-size: 2.2em;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.player-cabinet {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.turntable {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #c8b6e2, #a7c7e7);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.turntable .vinyl-record {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: background-image 0.5s ease-in-out;
+}
+.turntable .vinyl-record::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(51, 51, 51, 0.5), rgba(34, 34, 34, 0.5));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+.turntable .vinyl-record::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  background: #ff8fab;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 143, 171, 0.5);
+  z-index: 3;
+}
+.turntable .vinyl-record.playing {
+  animation: rotate 5s linear infinite;
+}
+
+.control-panel {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+}
+
+.buttons {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #a7c7e7, #c8b6e2);
+  color: #2b2b2b;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.buttons button.active {
+  background: linear-gradient(145deg, #ff8fab, #ffc2d1);
+  color: white;
+}
+
+.equalizer {
+  display: flex;
+  gap: 3px;
+  height: 40px;
+  align-items: flex-end;
+}
+.equalizer .eq-bar {
+  flex: 1;
+  background: linear-gradient(to top, #ff8fab, #fff5f8);
+  height: 20px;
+  border-radius: 3px;
+  transition: height 0.2s ease;
+}
+
+.playlist {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.playlist .now-playing {
+  text-align: center;
+}
+.playlist .now-playing h3 {
+  color: #2b2b2b;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.playlist .now-playing .track-name {
+  color: #ff8fab;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.playlist .now-playing .artist-name {
+  color: #6e6e6e;
+  font-size: 0.9em;
+}
+
+.time-display {
+  font-family: "Inter", sans-serif;
+  color: #2b2b2b;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 8px 15px;
+  border-radius: 12px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

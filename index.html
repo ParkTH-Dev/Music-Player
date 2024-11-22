@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vintage Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="vintage-player">
+      <div class="player-cabinet">
+        <div class="brand-name">Music Player</div>
+
+        <div class="turntable">
+          <div class="record-player">
+            <div class="vinyl-record">
+              <div class="record-label"></div>
+            </div>
+            <div class="tonearm"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="control-panel">
+            <div class="time-display">00:00</div>
+            <div class="volume-knob">
+              <div class="knob-dot"></div>
+            </div>
+            <div class="equalizer">
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button class="btn-prev"><i class="fas fa-backward"></i></button>
+            <button class="btn-play"><i class="fas fa-play"></i></button>
+            <button class="btn-next"><i class="fas fa-forward"></i></button>
+            <button class="btn-shuffle"><i class="fas fa-random"></i></button>
+            <button class="btn-repeat"><i class="fas fa-redo"></i></button>
+          </div>
+          <div class="playlist">
+            <div class="now-playing">
+              <h3>Now Playing</h3>
+              <p class="track-name">Track Title</p>
+              <p class="artist-name">Artist Name</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
